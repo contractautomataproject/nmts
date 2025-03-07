@@ -6,14 +6,15 @@ For each example involving the NMTS refinement, the reachability closed sets as 
 All NMTSs are located in the folder `src/main/resources`.
 
 The contract automata library (CATLib) is used to store and load the NMTSs as modal contract automata. 
-Furthermore, the synchronous product used by the NMTS refinement for computing the reachability-closed sets is computed using the composition function of CATLib.
+Furthermore, the synchronous product used by the NMTS refinement for computing the reachability closed sets is computed using the composition function of CATLib.
 
 
 ### Experiment logs
 
 The console output of the class `src/main/java/io/github/contractautomata/nmts/Main.java` is reported below:
 
-```Figure 2:
+```
+Figure 2:
 Reachability Closed sets of S: [[[s5]], [[s]], [[s2], [s1]], [[s4], [s3]]]
 S is an NMTS: false
 Reachability Closed sets of T:[[[t]], [[t5]], [[t2], [t1]], [[t4], [t3]]]
