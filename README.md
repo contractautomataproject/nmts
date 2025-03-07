@@ -72,4 +72,4 @@ T is an NMTS: true
 Reachability Closed sets of U:[[[u2]], [[u1], [u]], [[ui]]]
 U is an NMTS: true
 T <n U : true
-R_(T <n U) : [[ti, ui], [t, u], [t1, u], [t3, u2], [t2, u1]]```
+R_(T <n U) : [[ti, ui], [t, u], [t1, u], [t3, u2], [t2, u1]]
