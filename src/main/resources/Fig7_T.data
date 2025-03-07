@@ -1,0 +1,6 @@
+Rank: 1
+Initial state: [t]
+Final states: [[t, t1, t2]]
+Transitions:
+([t],[a],[t1])
+([t1],[b],[t2])

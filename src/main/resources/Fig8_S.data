@@ -1,0 +1,8 @@
+Rank: 1
+Initial state: [si]
+Final states: [[si, s, s1, s2]]
+Transitions:
+!U([si],[b],[s])
+!U([si],[c],[s])
+!U([si],[c],[s1])
+!U([s1],[a],[s2])
