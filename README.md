@@ -1,6 +1,7 @@
 This repository contains an implementation of the Non-reducible Modal Transition Systems (NMTS) refinement.
 The class `src/main/java/io/github/contractautomata/nmts/NMTSRefinement.java` contains the implementation of the refinement, following the algorithms presented in the paper "Non-reducible Modal Transition Systems" (currently submitted for publication).
 The class `src/main/java/io/github/contractautomata/nmts/Main.java` is an executable running the NMTS refinement on the examples in the paper.
+The various MTS and NMTS of the examples are stored in `src/main/resources`. 
 
 For each example involving the NMTS refinement, the reachability closed sets as well as the refinement relations (when existing) are reported.
 All NMTSs are located in the folder `src/main/resources`.
