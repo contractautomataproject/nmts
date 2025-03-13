@@ -43,12 +43,12 @@ The file `NMTS-1.0-SNAPSHOT.jar` is packaging the executable class `src/main/jav
 
 To execute it type:
 ```console
-java -jar NMTS-1.0-SNAPSHOT.jar
+> java -jar NMTS-1.0-SNAPSHOT.jar
 ```
 
 By running this executable, the following output will be printed at console:
 
-```
+```console
 Figure 2:
 Reachability Closed sets of S: [[[s5]], [[s]], [[s2], [s1]], [[s4], [s3]]]
 S is an NMTS: false
