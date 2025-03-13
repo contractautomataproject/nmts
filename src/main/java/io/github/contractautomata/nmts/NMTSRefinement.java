@@ -3,15 +3,50 @@ package io.github.contractautomata.nmts;
 import io.github.contractautomata.catlib.automaton.Automaton;
 import io.github.contractautomata.catlib.automaton.label.Label;
 import io.github.contractautomata.catlib.automaton.label.action.Action;
+import io.github.contractautomata.catlib.automaton.state.BasicState;
 import io.github.contractautomata.catlib.automaton.state.State;
 import io.github.contractautomata.catlib.automaton.transition.ModalTransition;
+import io.github.contractautomata.catlib.converters.AutDataConverter;
 import io.github.contractautomata.catlib.operations.ModelCheckingFunction;
 
+import java.io.IOException;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 public class NMTSRefinement {
+
+    public static void main(String[] args) throws IOException {
+        System.out.println("--------------------------------------------------------");
+        System.out.println(" NMTS Refinement Checker");
+        System.out.println("--------------------------------------------------------");
+        System.out.println("Usage:");
+        System.out.println("    java -jar NMTSRefinement.jar <file1> <file2>");
+        System.out.println();
+        System.out.println("Description:");
+        System.out.println("    This tool checks whether the first file (file1) is an NMTS refinement of the second file (file2).");
+        System.out.println();
+        System.out.println("Arguments:");
+        System.out.println("    <file1>   Path to the first NMTS file.");
+        System.out.println("    <file2>   Path to the second NMTS file.");
+        System.out.println();
+        final AutDataConverter<Label<Action>> adc = new AutDataConverter<>(Label::new);
+        Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, Label<Action>>>  S = adc.importMSCA(args[0]);
+        Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, Label<Action>>>  T = adc.importMSCA(args[0]);
+
+
+        Set<State<String>> R = NMTSRefinement.NMTSRefinement(S,T);
+
+        if (NMTSRefinement.isNMTSRefinement(R,S,T)) {
+            System.out.println(args[0]  + " is an NMTS refinement of "+ args[1]);
+            System.out.println("Refinement relation : " + R);
+        }
+        else
+            System.out.println("The two NMTS are not in NMTS refinement relation.");
+
+
+    }
     public static Set<Set<State<String>>> computeRCS(Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, Label<Action>>> mts) {
 
         ModelCheckingFunction<String, State<String>, Label<Action>,
@@ -97,7 +132,7 @@ public class NMTSRefinement {
     private static Set<State<String>> computeNMTSRefinement(Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, Label<Action>>> S, Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, Label<Action>>> T, boolean ignore) {
 
         if (!ignore && (!isNMTS(S) || !isNMTS(T))) {
-            System.out.println("One of the MTS is not a NMTS");
+            System.out.println("One of the MTS is not a NMTS.");
             return null;
         }
 
@@ -223,6 +258,14 @@ public class NMTSRefinement {
             }
         }
         return true;
+    }
+
+    public static boolean isNMTSRefinement( Set<State<String>> R, Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, Label<Action>>> S, Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, Label<Action>>> T){
+        if (Objects.isNull(R))
+            return false;
+        BasicState<String> initS = S.getInitial().getState().get(0);
+        BasicState<String> initT = T.getInitial().getState().get(0);
+        return R.stream().anyMatch(p->p.getState().get(0).equals(initS)&&p.getState().get(1).equals(initT));
     }
 
 }

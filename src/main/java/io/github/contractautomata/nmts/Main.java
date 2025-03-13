@@ -87,11 +87,7 @@ public class Main {
 
     }
 
-    private static boolean isNMTSRefinement( Set<State<String>> R, Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, Label<Action>>> S, Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, Label<Action>>> T){
-        BasicState<String> initS = S.getInitial().getState().get(0);
-        BasicState<String> initT = T.getInitial().getState().get(0);
-        return R.stream().anyMatch(p->p.getState().get(0).equals(initS)&&p.getState().get(1).equals(initT));
-    }
+
 
     private static void printExample(Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, Label<Action>>>  S, Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, Label<Action>>>  T, boolean ignore, String Sname, String Tname){
         System.out.println("Reachability Closed sets of "+Sname+": "+ NMTSRefinement.computeRCS(S));
@@ -106,8 +102,8 @@ public class Main {
         if (ignore)
             R = NMTSRefinement.NMTSRefinementIgnore(S,T);
         else R = NMTSRefinement.NMTSRefinement(S,T);
-        System.out.println(Sname+" <n "+Tname+" : "+isNMTSRefinement(R,S,T));
-        if (isNMTSRefinement(R,S,T))
+        System.out.println(Sname+" <n "+Tname+" : "+NMTSRefinement.isNMTSRefinement(R,S,T));
+        if (NMTSRefinement.isNMTSRefinement(R,S,T))
             System.out.println("R_("+Sname+" <n "+Tname+") : "+R);
     }
 

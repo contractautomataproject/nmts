@@ -2,9 +2,10 @@
 
 
 This repository contains an implementation of the Non-reducible Modal Transition Systems (NMTS) refinement.
-The class `src/main/java/io/github/contractautomata/nmts/NMTSRefinement.java` contains the implementation of the refinement, following the algorithms presented in the paper "Non-reducible Modal Transition Systems" (currently submitted for publication).
-The class `src/main/java/io/github/contractautomata/nmts/Main.java` is an executable running the NMTS refinement on the examples in the paper.
+The class `src/main/java/io/github/contractautomata/nmts/NMTSRefinement.java` contains the implementation of the refinement, following the algorithms presented in the paper "Non-reducible Modal Transition Systems" (currently submitted for publication). 
+This class is the executable tool that can be used to check whether two NMTS are in NMTS refinement relation.
 
+The class `src/main/java/io/github/contractautomata/nmts/Main.java` is an executable running the NMTS refinement on the examples in the paper.
 For each example involving the NMTS refinement, the reachability closed sets as well as the refinement relations (when existing) are reported.
 All NMTSs are located in the folder `src/main/resources`.
 
@@ -14,9 +15,31 @@ Furthermore, the synchronous product used by the NMTS refinement for computing t
 
 ### Getting started
 
-The easiest way to start is to download the released jar file of this repository (see Releases in the right column).
-This file is runnable from command-line, and it only requires a Java distribution compatible with version 17. 
-This jar packages the executable class `src/main/java/io/github/contractautomata/nmts/Main.java` with all its dependencies and resources.
+The easiest way to start is to download the released jar files of this repository (see Releases in the right column).
+Both jar files are runnable from command-line, and they only require a Java distribution compatible with version 17.  
+The file `NMTSRefinement.jar` is the NMTS refinement checker tool. The file packages the executable class `src/main/java/io/github/contractautomata/nmts/Main.java` with all its dependencies and resources. 
+This is an example of execution of the tool (assuming that the executable and the NMTS files are located in the same folder):
+
+```console
+> java -jar NMTSRefinement.jar Fig8_T.data Fig8_U.data
+--------------------------------------------------------
+ NMTS Refinement Checker
+--------------------------------------------------------
+Usage:
+    java -jar NMTSRefinement.jar <file1> <file2>
+
+Description:
+    This tool checks whether the first file (file1) is an NMTS refinement of the second file (file2).
+
+Arguments:
+    <file1>   Path to the first NMTS file.
+    <file2>   Path to the second NMTS file.
+
+Fig8_T.data is an NMTS refinement of Fig8_U.data
+Refinement relation : [[t1, t1], [t, t], [t3, t3], [ti, ti], [t2, t2]]
+```
+
+The file `NMTS-1.0-SNAPSHOT.jar` is packaging the executable class `src/main/java/io/github/contractautomata/nmts/Main.java` with all its dependencies and resources.
 
 To execute it type:
 ```console
