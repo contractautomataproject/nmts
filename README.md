@@ -1,4 +1,4 @@
-# NMTS Refinement
+# NMTS Refinement Checker
 
 
 This repository contains an implementation of the Non-reducible Modal Transition Systems (NMTS) refinement.
