@@ -33,17 +33,17 @@ public class NMTSRefinement {
         System.out.println();
         final AutDataConverter<Label<Action>> adc = new AutDataConverter<>(Label::new);
         Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, Label<Action>>>  S = adc.importMSCA(args[0]);
-        Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, Label<Action>>>  T = adc.importMSCA(args[0]);
+        Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, Label<Action>>>  T = adc.importMSCA(args[1]);
 
 
         Set<State<String>> R = NMTSRefinement.NMTSRefinement(S,T);
 
         if (NMTSRefinement.isNMTSRefinement(R,S,T)) {
-            System.out.println(args[0]  + " is an NMTS refinement of "+ args[1]);
+            System.out.println(args[0]  + " <n "+ args[1]);
             System.out.println("Refinement relation : " + R);
         }
         else
-            System.out.println("The two NMTS are not in NMTS refinement relation.");
+            System.out.println(args[0]  + " does not refine "+ args[1]);
 
 
     }

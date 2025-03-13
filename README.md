@@ -35,8 +35,8 @@ Arguments:
     <file1>   Path to the first NMTS file.
     <file2>   Path to the second NMTS file.
 
-Fig8_T.data is an NMTS refinement of Fig8_U.data
-Refinement relation : [[t1, t1], [t, t], [t3, t3], [ti, ti], [t2, t2]]
+Fig8_T.data <n Fig8_U.data
+Refinement relation : [[ti, ui], [t1, u], [t, u], [t2, u1], [t3, u2]]
 ```
 
 The file `NMTS-1.0-SNAPSHOT.jar` is packaging the executable class `src/main/java/io/github/contractautomata/nmts/Main.java` with all its dependencies and resources.

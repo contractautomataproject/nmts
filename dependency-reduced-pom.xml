@@ -34,7 +34,7 @@
         <configuration>
           <transformers>
             <transformer>
-              <mainClass>io.github.contractautomata.nmts.Main</mainClass>
+              <mainClass>io.github.contractautomata.nmts.NMTSRefinement</mainClass>
             </transformer>
           </transformers>
         </configuration>
