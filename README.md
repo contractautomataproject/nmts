@@ -12,9 +12,18 @@ The contract automata library (CATLib) is used to store and load the NMTSs as mo
 Furthermore, the synchronous product used by the NMTS refinement for computing the reachability closed sets is computed using the composition function of CATLib.
 
 
-### Experiment logs
+### Getting started
 
-The console output of the class `src/main/java/io/github/contractautomata/nmts/Main.java` is reported below:
+The easiest way to start is to download the released jar file of this repository (see Releases in the right column).
+This file is runnable from command-line, and it only requires a Java distribution compatible with version 17. 
+This jar packages the executable class `src/main/java/io/github/contractautomata/nmts/Main.java` with all its dependencies and resources.
+
+To execute it type:
+```console
+java -jar NMTS-1.0-SNAPSHOT.jar
+```
+
+By running this executable, the following output will be printed at console:
 
 ```
 Figure 2:

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.github.contractautomata.nmts</groupId>
+  <artifactId>NMTS</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <developers>
+    <developer>
+      <name>Davide Basile</name>
+      <email>davide.basile@isti.cnr.it</email>
+      <organization>ISTI CNR</organization>
+      <organizationUrl>https://www.isti.cnr.it/</organizationUrl>
+    </developer>
+  </developers>
+  <licenses>
+    <license>
+      <name>&gt;GNU General Public License v3.0</name>
+      <url>http://www.gnu.org/licenses/gpl-3.0.rdf</url>
+    </license>
+  </licenses>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.4.1</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <transformers>
+            <transformer>
+              <mainClass>io.github.contractautomata.nmts.Main</mainClass>
+            </transformer>
+          </transformers>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <properties>
+    <maven.compiler.target>17</maven.compiler.target>
+    <maven.compiler.source>17</maven.compiler.source>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+</project>
