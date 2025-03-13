@@ -17,7 +17,7 @@ Furthermore, the synchronous product used by the NMTS refinement for computing t
 
 The easiest way to start is to download the released jar files of this repository (see Releases in the right column).
 Both jar files are runnable from command-line, and they only require a Java distribution compatible with version 17.  
-The file `NMTSRefinement.jar` is the NMTS refinement checker tool. The file packages the executable class `src/main/java/io/github/contractautomata/nmts/Main.java` with all its dependencies and resources. 
+The file `NMTSRefinement.jar` is the NMTS refinement checker tool. The file packages the executable class `src/main/java/io/github/contractautomata/nmts/NMTSRefinement.java` with all its dependencies and resources. 
 This is an example of execution of the tool (assuming that the executable and the NMTS files are located in the same folder):
 
 ```console
