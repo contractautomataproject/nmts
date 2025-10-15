@@ -1,8 +1,8 @@
 Rank: 1
-Initial state: [ti]
-Final states: [[ti, t, t1, t2, t3]]
+Initial state: [s]
+Final states: [[s, s1, s2, s3, s4]]
 Transitions:
-!U([ti],[b],[t])
-!U([ti],[c],[t1])
-!U([ti],[c],[t2])
-([t1],[a],[t3])
+!U([s],[c],[s1])
+!U([s],[c],[s2])
+!U([s1],[a],[s3])
+!U([s2],[a],[s4])

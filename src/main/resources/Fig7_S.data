@@ -1,7 +1,0 @@
-Rank: 1
-Initial state: [s]
-Final states: [[s, s1, s2, s3]]
-Transitions:
-([s],[a],[s1])
-([s],[a],[s2])
-([s1],[b],[s3])

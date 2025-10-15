@@ -3,7 +3,6 @@ package io.github.contractautomata.nmts;
 import io.github.contractautomata.catlib.automaton.Automaton;
 import io.github.contractautomata.catlib.automaton.label.Label;
 import io.github.contractautomata.catlib.automaton.label.action.Action;
-import io.github.contractautomata.catlib.automaton.state.BasicState;
 import io.github.contractautomata.catlib.automaton.state.State;
 import io.github.contractautomata.catlib.automaton.transition.ModalTransition;
 import io.github.contractautomata.catlib.converters.AutDataConverter;
@@ -25,6 +24,10 @@ public class Main {
         Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, Label<Action>>> T;
         Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, Label<Action>>> I;
         Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, Label<Action>>> U;
+        Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, Label<Action>>> I1;
+        Automaton<String, Action, State<String>, ModalTransition<String, Action, State<String>, Label<Action>>> I2;
+
+
 
         System.out.println("Figure 2:");
         // S = adc.importMSCA(dir + "Fig2_S.data");
@@ -39,16 +42,20 @@ public class Main {
         // T = adc.importMSCA(dir + "Fig4_T.data");
         S = loadFile("Fig4_S.data");
         T = loadFile("Fig4_T.data");
+
         printExample(S,T,false,"S","T");
-
-
-        // I = adc.importMSCA(dir + "Fig4_I.data");
-        I = loadFile("Fig4_I.data");
-        System.out.println("");
-        printExample(I,S,false,"I","S");
+        printExample(T,S,false,"T","S");
 
         System.out.println("");
-        printExample(I,T,false,"I","T");
+        System.out.println("Figure 5:");
+        S = loadFile("Fig5_S.data");
+        I1 = loadFile("Fig5_I1.data");
+        I2 = loadFile("Fig5_I2.data");
+        T = loadFile("Fig5_T.data");
+        printExample(S,T,false,"S","T");
+        printExample(I1,T,false,"I1","T");
+        printExample(I2,T,false,"I2","T");
+
 
         System.out.println("");
         System.out.println("Figure 6:");
@@ -56,30 +63,36 @@ public class Main {
         // T = adc.importMSCA(dir + "Fig6_T.data");
         S = loadFile("Fig6_S.data");
         T = loadFile("Fig6_T.data");
-
-        printExample(S,T,true,"S","T");
-
-        System.out.println("");
-        System.out.println("Figure 7:");
-        // S = adc.importMSCA(dir + "Fig7_S.data");
-        // T = adc.importMSCA(dir + "Fig7_T.data");
-        S = loadFile("Fig7_S.data");
-        T = loadFile("Fig7_T.data");
-
         printExample(S,T,false,"S","T");
 
 
-        printExample(T,S,false,"T","S");
+        // I = adc.importMSCA(dir + "Fig6_I.data");
+        I = loadFile("Fig6_I.data");
+        System.out.println("");
+        printExample(I,S,false,"I","S");
 
+        System.out.println("");
+        printExample(I,T,false,"I","T");
 
         System.out.println("");
         System.out.println("Figure 8:");
         // S = adc.importMSCA(dir + "Fig8_S.data");
         // T = adc.importMSCA(dir + "Fig8_T.data");
-        // U = adc.importMSCA(dir + "Fig8_U.data");
         S = loadFile("Fig8_S.data");
         T = loadFile("Fig8_T.data");
-        U = loadFile("Fig8_U.data");
+
+        printExample(S,T,true,"S","T");
+
+
+
+        System.out.println("");
+        System.out.println("Figure 9:");
+        // S = adc.importMSCA(dir + "Fig9_S.data");
+        // T = adc.importMSCA(dir + "Fig9_T.data");
+        // U = adc.importMSCA(dir + "Fig9_U.data");
+        S = loadFile("Fig9_S.data");
+        T = loadFile("Fig9_T.data");
+        U = loadFile("Fig9_U.data");
 
         printExample(S,T,false,"S","T");
         printExample(T,U,false,"T","U");
