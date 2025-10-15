@@ -50,62 +50,82 @@ By running this executable, the following output will be printed at console:
 
 ```console
 Figure 2:
-Reachability Closed sets of S: [[[s5]], [[s]], [[s2], [s1]], [[s4], [s3]]]
+Reachability Closed sets of S: [[[s]], [[s2], [s1]], [[s5]], [[s3], [s4]]]
 S is an NMTS: false
-Reachability Closed sets of T:[[[t]], [[t5]], [[t2], [t1]], [[t4], [t3]]]
+Reachability Closed sets of T:[[[t3], [t4]], [[t]], [[t5]], [[t1], [t2]]]
 T is an NMTS: false
 Warning: NMTS Refinement is not checking whether the operands are NMTS or MTS.
 S <n T : false
 
 Figure 4:
-Reachability Closed sets of S: [[[s]], [[s2], [s1]], [[s5]], [[s4], [s3]]]
-S is an NMTS: true
-Reachability Closed sets of T:[[[t3], [t4], [t5]], [[t2], [t1]], [[t]], [[t6]]]
-T is an NMTS: true
-S <n T : false
-
-Reachability Closed sets of I: [[[i3], [i4]], [[i]], [[i2], [i1]], [[i5]]]
-I is an NMTS: true
-Reachability Closed sets of S:[[[s]], [[s2], [s1]], [[s5]], [[s4], [s3]]]
-S is an NMTS: true
-I <n S : true
-R_(I <n S) : [[i2, s2], [i3, s3], [i1, s1], [i5, s5], [i4, s4], [i, s]]
-
-Reachability Closed sets of I: [[[i3], [i4]], [[i]], [[i2], [i1]], [[i5]]]
-I is an NMTS: true
-Reachability Closed sets of T:[[[t3], [t4], [t5]], [[t2], [t1]], [[t]], [[t6]]]
-T is an NMTS: true
-I <n T : false
-
-Figure 6:
-Reachability Closed sets of S: [[[s]], [[s1], [s2]], [[s3], [s4]]]
-S is an NMTS: false
-Reachability Closed sets of T:[[[s2], [s1]], [[s]], [[s3], [s4]]]
-T is an NMTS: true
-Warning: NMTS Refinement is not checking whether the operands are NMTS or MTS.
-S <n T : false
-
-Figure 7:
-Reachability Closed sets of S: [[[s]], [[s2], [s1]], [[s3]]]
+Reachability Closed sets of S: [[[s2], [s1]], [[s3]], [[s]]]
 S is an NMTS: true
 Reachability Closed sets of T:[[[t1]], [[t2]], [[t]]]
 T is an NMTS: true
 S <n T : false
 Reachability Closed sets of T: [[[t1]], [[t2]], [[t]]]
 T is an NMTS: true
-Reachability Closed sets of S:[[[s]], [[s2], [s1]], [[s3]]]
+Reachability Closed sets of S:[[[s2], [s1]], [[s3]], [[s]]]
 S is an NMTS: true
 T <n S : false
 
-Figure 8:
-Reachability Closed sets of S: [[[si]], [[s2]], [[s], [s1]]]
+Figure 5:
+Reachability Closed sets of S: [[[s1], [s4], [s3], [s2]], [[s0]], [[s5]]]
 S is an NMTS: true
-Reachability Closed sets of T:[[[t]], [[t1], [t2]], [[ti]], [[t3]]]
+Reachability Closed sets of T:[[[t5]], [[t2], [t1], [t6]], [[t0]], [[t4], [t3]]]
 T is an NMTS: true
 S <n T : false
-Reachability Closed sets of T: [[[t]], [[t1], [t2]], [[ti]], [[t3]]]
+Reachability Closed sets of I1: [[[i3], [i4], [i2], [i1]], [[i0]], [[i5]]]
+I1 is an NMTS: true
+Reachability Closed sets of T:[[[t5]], [[t2], [t1], [t6]], [[t0]], [[t4], [t3]]]
 T is an NMTS: true
-Reachability Closed sets of U:[[[u2]], [[u1], [u]], [[ui]]]
+I1 <n T : false
+Reachability Closed sets of I2: [[[i0]], [[i4], [i2], [i1]]]
+I2 is an NMTS: true
+Reachability Closed sets of T:[[[t5]], [[t2], [t1], [t6]], [[t0]], [[t4], [t3]]]
+T is an NMTS: true
+I2 <n T : true
+R_(I2 <n T) : [[i4, t1], [i4, t2], [i2, t2], [i0, t0], [i4, t6], [i2, t6], [i1, t1], [i2, t1], [i1, t2], [i1, t6]]
+
+
+Figure 6:
+Reachability Closed sets of S: [[[s4], [s3]], [[s1], [s2]], [[s5]], [[s]]]
+S is an NMTS: true
+Reachability Closed sets of T:[[[t1], [t2]], [[t6]], [[t4], [t3], [t5]], [[t]]]
+T is an NMTS: true
+S <n T : false
+
+Reachability Closed sets of I: [[[i]], [[i5]], [[i2], [i1]], [[i3], [i4]]]
+I is an NMTS: true
+Reachability Closed sets of S:[[[s4], [s3]], [[s1], [s2]], [[s5]], [[s]]]
+S is an NMTS: true
+I <n S : true
+R_(I <n S) : [[i5, s5], [i4, s4], [i2, s2], [i, s], [i1, s1], [i3, s3]]
+
+Reachability Closed sets of I: [[[i]], [[i5]], [[i2], [i1]], [[i3], [i4]]]
+I is an NMTS: true
+Reachability Closed sets of T:[[[t1], [t2]], [[t6]], [[t4], [t3], [t5]], [[t]]]
+T is an NMTS: true
+I <n T : false
+
+Figure 8:
+Reachability Closed sets of S: [[[s]], [[s3], [s4]], [[s1], [s2]]]
+S is an NMTS: false
+Reachability Closed sets of T:[[[s2], [s1]], [[s]], [[s4], [s3]]]
+T is an NMTS: true
+Warning: NMTS Refinement is not checking whether the operands are NMTS or MTS.
+S <n T : false
+
+Figure 9:
+Reachability Closed sets of S: [[[si]], [[s1], [s]], [[s2]]]
+S is an NMTS: true
+Reachability Closed sets of T:[[[t]], [[ti]], [[t2], [t1]], [[t3]]]
+T is an NMTS: true
+S <n T : false
+Reachability Closed sets of T: [[[t]], [[ti]], [[t2], [t1]], [[t3]]]
+T is an NMTS: true
+Reachability Closed sets of U:[[[u2]], [[ui]], [[u], [u1]]]
 U is an NMTS: true
 T <n U : true
-R_(T <n U) : [[ti, ui], [t, u], [t1, u], [t3, u2], [t2, u1]]
+R_(T <n U) : [[t2, u1], [t3, u2], [ti, ui], [t1, u], [t, u]]
+
